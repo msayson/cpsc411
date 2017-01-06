@@ -18,6 +18,7 @@ public class Add extends AE {
     }
 
     @Override
+    // Returns the value obtained by adding two arithmetic expressions
     public int interp() {
         return leftAE.interp() + rightAE.interp();
     }

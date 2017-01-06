@@ -18,6 +18,7 @@ public class Sub extends AE {
     }
 
     @Override
+    // Returns the value obtained by subtracting the second expression from the first
     public int interp() {
         return leftAE.interp() - rightAE.interp();
     }

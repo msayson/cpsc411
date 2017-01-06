@@ -16,6 +16,7 @@ public class Num extends AE {
     }
 
     @Override
+    // Returns the integer value held by the Num expression
     public int interp() {
         return n;
     }
