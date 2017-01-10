@@ -1,9 +1,14 @@
 package ca.ubc.cs411.abe;
 
 public class NVal extends Value {
-    public final int n;
+    private final int n;
     public NVal(int n) {
         this.n = n;
+    }
+
+    @Override
+    public int toNum() {
+        return n;
     }
 
     @Override
