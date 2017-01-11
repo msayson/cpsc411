@@ -1,11 +1,29 @@
 package ca.ubc.cs411.abe;
 
-import ca.ubc.cs411.abe.NVal;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.fail;
 
 public class NValTest {
+    @Test
+    public void toBool() {
+        NVal val = new NVal(5);
+        try {
+            val.toBool();
+            fail("NVal.toBool() should throw an Error");
+        } catch (Error e) {
+            assertThat(e.getMessage()).isEqualTo("toBool: NVal(5) is not a boolean");
+        }
+    }
+
+    @Test
+    public void toNum() {
+        int intVal = 5;
+        NVal val = new NVal(intVal);
+        assertThat(val.toNum()).isEqualTo(intVal);
+    }
+
     @Test
     public void isNotEqualToNonNVal() {
         int innerIntVal = 5;

@@ -5,6 +5,9 @@ public class TVal extends Value {
     public int toNum() { throw new Error("toNum: TVal is not a number"); }
 
     @Override
+    public boolean toBool() { return true; }
+
+    @Override
     public String toString() { return "TVal"; }
 
     @Override

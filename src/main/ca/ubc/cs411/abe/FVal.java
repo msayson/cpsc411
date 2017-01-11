@@ -7,6 +7,9 @@ public class FVal extends Value {
     }
 
     @Override
+    public boolean toBool() { return false; }
+
+    @Override
     public String toString() {
         return "FVal";
     }

@@ -12,6 +12,11 @@ public class NVal extends Value {
     }
 
     @Override
+    public boolean toBool() {
+        throw new Error("toBool: " + this + " is not a boolean");
+    }
+
+    @Override
     public String toString() {
         return "NVal(" + n + ")";
     }
