@@ -4,11 +4,6 @@ public class If extends ABE {
     private ABE pred, conseq, altern;
 
     public If(ABE pred, ABE conseq, ABE altern) {
-        if (pred.typeOf() != Type.BOOL) {
-            throw new Error("If constructor passed a non-Bool predicate: " + pred);
-        } else if (conseq.typeOf() != altern.typeOf()) {
-            throw new Error("If constructor passed consequence and alternative expressions with different types: " + conseq + ", " + altern);
-        }
         this.pred = pred;
         this.conseq = conseq;
         this.altern = altern;
@@ -24,7 +19,11 @@ public class If extends ABE {
 
     @Override
     public Type typeOf() {
-        // Invariant: conseq and altern have the same type
+        if (pred.typeOf() != Type.BOOL) {
+            throw new Error("If constructor passed a non-Bool predicate: " + pred);
+        } else if (conseq.typeOf() != altern.typeOf()) {
+            throw new Error("If constructor passed consequence and alternative expressions with different types: " + conseq + ", " + altern);
+        }
         return conseq.typeOf();
     }
 
