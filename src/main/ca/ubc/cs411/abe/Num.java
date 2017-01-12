@@ -8,10 +8,12 @@ public class Num extends ABE {
     }
 
     @Override
-    // Returns the integer value held by the Num expression
     public Value interp() {
         return new NVal(n);
     }
+
+    @Override
+    public Type typeOf() { return Type.INT; }
 
     @Override
     public String toString() {

@@ -15,6 +15,14 @@ public class Sub extends ABE {
     }
 
     @Override
+    public Type typeOf() {
+        if (lhs.typeOf() == Type.INT && rhs.typeOf() == Type.INT) {
+            return Type.INT;
+        }
+        throw new Error("typeOf: argument type mismatch for " + this.toString());
+    }
+
+    @Override
     public String toString() {
         return "Sub(" + lhs + "," + rhs + ")";
     }

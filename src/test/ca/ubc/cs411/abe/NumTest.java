@@ -1,8 +1,5 @@
 package ca.ubc.cs411.abe;
 
-import ca.ubc.cs411.abe.ABE;
-import ca.ubc.cs411.abe.NVal;
-import ca.ubc.cs411.abe.Num;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -19,6 +16,11 @@ public class NumTest {
         int intVal = 5;
         ABE num = new Num(intVal);
         assertThat(num.interp()).isEqualTo(new NVal(intVal));
+    }
+
+    @Test
+    public void typeOf() throws Exception {
+        assertThat(new Num(5).typeOf()).isEqualTo(Type.INT);
     }
 
 }

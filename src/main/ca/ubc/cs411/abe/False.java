@@ -5,4 +5,7 @@ public class False extends ABE {
     public Value interp() {
         return new FVal();
     }
+
+    @Override
+    public Type typeOf() { return Type.BOOL; }
 }

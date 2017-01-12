@@ -6,4 +6,5 @@ package ca.ubc.cs411.abe;
 public abstract class ABE {
     // Returns the value produced by evaluating the expression
     public abstract Value interp();
+    public abstract Type typeOf();
 }
