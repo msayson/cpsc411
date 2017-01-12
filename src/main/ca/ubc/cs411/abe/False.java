@@ -8,4 +8,7 @@ public class False extends ABE {
 
     @Override
     public Type typeOf() { return Type.BOOL; }
+
+    @Override
+    public String toString() { return "False"; }
 }

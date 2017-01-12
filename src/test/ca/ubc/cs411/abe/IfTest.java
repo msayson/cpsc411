@@ -30,4 +30,16 @@ public class IfTest {
         ABE expr = new If(new False(), new Num(1), elseExpr);
         assertThat(expr.interp()).isEqualTo(new NVal(-19));
     }
+
+    @Test
+    public void toString_CompoundPred() throws Exception {
+        ABE expr = new If(new If(new True(), new False(), new True()), new True(), new False());
+        assertThat(expr.toString()).isEqualTo("If(If(True,False,True),True,False)");
+    }
+
+    @Test
+    public void toString_CompoundElse() throws Exception {
+        ABE expr = new If(new False(), new Num(2), new Add(new Num(-16), new Num(-3)));
+        assertThat(expr.toString()).isEqualTo("If(False,Num(2),Add(Num(-16),Num(-3)))");
+    }
 }

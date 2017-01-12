@@ -6,4 +6,7 @@ public class True extends ABE {
 
     @Override
     public Type typeOf() { return Type.BOOL; }
+
+    @Override
+    public String toString() { return "True"; }
 }
