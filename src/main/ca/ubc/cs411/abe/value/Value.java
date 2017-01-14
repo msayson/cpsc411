@@ -1,4 +1,4 @@
-package ca.ubc.cs411.abe;
+package ca.ubc.cs411.abe.value;
 
 public abstract class Value {
     public abstract int toNum();

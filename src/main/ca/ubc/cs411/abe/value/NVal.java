@@ -1,4 +1,4 @@
-package ca.ubc.cs411.abe;
+package ca.ubc.cs411.abe.value;
 
 public class NVal extends Value {
     private final int n;

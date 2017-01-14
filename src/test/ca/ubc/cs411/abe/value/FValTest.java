@@ -1,5 +1,6 @@
-package ca.ubc.cs411.abe;
+package ca.ubc.cs411.abe.value;
 
+import ca.ubc.cs411.abe.value.FVal;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

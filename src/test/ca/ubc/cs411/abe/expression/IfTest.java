@@ -1,5 +1,7 @@
-package ca.ubc.cs411.abe;
+package ca.ubc.cs411.abe.expression;
 
+import ca.ubc.cs411.abe.expression.*;
+import ca.ubc.cs411.abe.value.NVal;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
