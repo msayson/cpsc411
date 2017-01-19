@@ -3,6 +3,7 @@ package ca.ubc.cs411.abevisitor.expression;
 import ca.ubc.cs411.abe.type.Type;
 import ca.ubc.cs411.abe.value.Value;
 import ca.ubc.cs411.abevisitor.visitor.InterpVisitor;
+import ca.ubc.cs411.abevisitor.visitor.TypeOfVisitor;
 import ca.ubc.cs411.abevisitor.visitor.Visitor;
 
 public class Add extends ABE {
@@ -19,12 +20,7 @@ public class Add extends ABE {
     }
 
     @Override
-    public Type typeOf() {
-        if (lhs.typeOf() == Type.INT && rhs.typeOf() == Type.INT) {
-            return Type.INT;
-        }
-        throw new Error("typeOf: argument type mismatch for " + this.toString());
-    }
+    public Type typeOf() { return new TypeOfVisitor().visit(this); }
 
     @Override
     public <T> T accept(Visitor<T> visitor) { return visitor.visit(this); }

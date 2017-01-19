@@ -11,12 +11,18 @@ public class TypeOfVisitor implements Visitor<Type> {
 
     @Override
     public Type visit(Add a) {
-        return null;
+        if (a.lhs.accept(this) == Type.INT && a.rhs.accept(this) == Type.INT) {
+            return Type.INT;
+        }
+        throw new Error("typeOf: argument type mismatch for " + a.toString());
     }
 
     @Override
     public Type visit(Sub s) {
-        return null;
+        if (s.lhs.accept(this) == Type.INT && s.rhs.accept(this) == Type.INT) {
+            return Type.INT;
+        }
+        throw new Error("typeOf: argument type mismatch for " + s.toString());
     }
 
     @Override
@@ -31,6 +37,13 @@ public class TypeOfVisitor implements Visitor<Type> {
 
     @Override
     public Type visit(If i) {
-        return null;
+        if (i.pred.accept(this) != Type.BOOL) {
+            throw new Error("If constructor passed a non-Bool predicate: " + i.pred);
+        }
+        Type typeOfConsequence = i.conseq.accept(this);
+        if (typeOfConsequence != i.altern.accept(this)) {
+            throw new Error("If constructor passed consequence and alternative expressions with different types: " + i.conseq + ", " + i.altern);
+        }
+        return typeOfConsequence;
     }
 }
