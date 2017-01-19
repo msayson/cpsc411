@@ -12,5 +12,5 @@ public abstract class ABE {
     public abstract Value interp();
     // Returns the type of an expression
     public abstract Type typeOf();
-    public abstract Value accept(Visitor<ABE, Value> visitor);
+    public abstract Value accept(Visitor<Value> visitor);
 }

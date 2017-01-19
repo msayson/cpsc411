@@ -32,7 +32,7 @@ public class If extends ABE {
     }
 
     @Override
-    public Value accept(Visitor<ABE, Value> visitor) {
+    public Value accept(Visitor<Value> visitor) {
         return visitor.visit(this);
     }
 

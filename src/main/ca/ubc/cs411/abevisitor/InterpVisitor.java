@@ -6,11 +6,7 @@ import ca.ubc.cs411.abe.value.TVal;
 import ca.ubc.cs411.abe.value.Value;
 import ca.ubc.cs411.abevisitor.expression.*;
 
-public class InterpVisitor implements Visitor<ABE, Value> {
-    @Override
-    public Value visit(ABE abe) {
-        return abe.accept(this);
-    }
+public class InterpVisitor implements Visitor<Value> {
 
     public Value visit(Num nm) {
         return new NVal(nm.n);
