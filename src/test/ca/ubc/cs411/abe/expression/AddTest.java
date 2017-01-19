@@ -1,8 +1,5 @@
 package ca.ubc.cs411.abe.expression;
 
-import ca.ubc.cs411.abe.expression.ABE;
-import ca.ubc.cs411.abe.expression.Add;
-import ca.ubc.cs411.abe.expression.Num;
 import ca.ubc.cs411.abe.type.Type;
 import ca.ubc.cs411.abe.value.NVal;
 import org.junit.Test;
