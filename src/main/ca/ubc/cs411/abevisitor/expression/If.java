@@ -28,9 +28,7 @@ public class If extends ABE {
     }
 
     @Override
-    public Value accept(Visitor<Value> visitor) {
-        return visitor.visit(this);
-    }
+    public <T> T accept(Visitor<T> visitor) { return visitor.visit(this); }
 
     @Override
     public String toString() {

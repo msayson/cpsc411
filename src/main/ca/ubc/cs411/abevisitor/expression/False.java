@@ -3,6 +3,7 @@ package ca.ubc.cs411.abevisitor.expression;
 import ca.ubc.cs411.abe.type.Type;
 import ca.ubc.cs411.abe.value.Value;
 import ca.ubc.cs411.abevisitor.visitor.InterpVisitor;
+import ca.ubc.cs411.abevisitor.visitor.TypeOfVisitor;
 import ca.ubc.cs411.abevisitor.visitor.Visitor;
 
 public class False extends ABE {
@@ -10,12 +11,10 @@ public class False extends ABE {
     public Value interp() { return new InterpVisitor().visit(this); }
 
     @Override
-    public Type typeOf() { return Type.BOOL; }
+    public Type typeOf() { return new TypeOfVisitor().visit(this); }
 
     @Override
-    public Value accept(Visitor<Value> visitor) {
-        return visitor.visit(this);
-    }
+    public <T> T accept(Visitor<T> visitor) { return visitor.visit(this); }
 
     @Override
     public String toString() { return "False"; }
