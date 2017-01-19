@@ -3,7 +3,7 @@ package ca.ubc.cs411.abevisitor.expression;
 import ca.ubc.cs411.abe.type.Type;
 import ca.ubc.cs411.abe.value.TVal;
 import ca.ubc.cs411.abe.value.Value;
-import ca.ubc.cs411.abevisitor.Visitor;
+import ca.ubc.cs411.abevisitor.visitor.Visitor;
 
 public class True extends ABE {
     @Override

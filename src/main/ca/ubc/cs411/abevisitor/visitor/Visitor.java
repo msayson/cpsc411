@@ -1,4 +1,4 @@
-package ca.ubc.cs411.abevisitor;
+package ca.ubc.cs411.abevisitor.visitor;
 
 import ca.ubc.cs411.abevisitor.expression.*;
 
