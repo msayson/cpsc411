@@ -2,9 +2,10 @@ package ca.ubc.cs411.abevisitor.expression;
 
 import ca.ubc.cs411.abe.type.Type;
 import ca.ubc.cs411.abe.value.Value;
+import ca.ubc.cs411.abevisitor.Visitor;
 
 public class If extends ABE {
-    private ABE pred, conseq, altern;
+    public final ABE pred, conseq, altern;
 
     public If(ABE pred, ABE conseq, ABE altern) {
         this.pred = pred;
@@ -28,6 +29,11 @@ public class If extends ABE {
             throw new Error("If constructor passed consequence and alternative expressions with different types: " + conseq + ", " + altern);
         }
         return conseq.typeOf();
+    }
+
+    @Override
+    public Value accept(Visitor<ABE, Value> visitor) {
+        return visitor.visit(this);
     }
 
     @Override

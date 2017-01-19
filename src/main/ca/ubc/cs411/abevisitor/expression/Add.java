@@ -3,10 +3,10 @@ package ca.ubc.cs411.abevisitor.expression;
 import ca.ubc.cs411.abe.type.Type;
 import ca.ubc.cs411.abe.value.NVal;
 import ca.ubc.cs411.abe.value.Value;
+import ca.ubc.cs411.abevisitor.Visitor;
 
 public class Add extends ABE {
-    private final ABE lhs;
-    private final ABE rhs;
+    public final ABE lhs, rhs;
 
     public Add(ABE lhs, ABE rhs) {
         this.lhs = lhs;
@@ -24,6 +24,11 @@ public class Add extends ABE {
             return Type.INT;
         }
         throw new Error("typeOf: argument type mismatch for " + this.toString());
+    }
+
+    @Override
+    public Value accept(Visitor<ABE, Value> visitor) {
+        return visitor.visit(this);
     }
 
     @Override
