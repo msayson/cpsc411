@@ -10,7 +10,8 @@ import ca.ubc.cs411.abevisitor.visitor.Visitor;
 public abstract class ABE {
     // Returns the value produced by evaluating the expression
     public abstract Value interp();
-    // Returns the type of an expression
+    // Returns the type of the expression
     public abstract Type typeOf();
+    // Returns the result of running the expression through a given visitor
     public abstract <T> T accept(Visitor<T> visitor);
 }

@@ -9,5 +9,6 @@ import ca.ubc.cs411.abe.value.Value;
 public abstract class ABE {
     // Returns the value produced by evaluating the expression
     public abstract Value interp();
+    // Returns the type of the expression
     public abstract Type typeOf();
 }
