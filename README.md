@@ -1,7 +1,7 @@
 # cpsc411
 ### UBC CPSC 411: Introduction to Compiler Construction
 
-##### ae: trivial arithmetic expression language.
+#### ae: trivial arithmetic expression language
 
 Supported expressions: Num, Add, Sub
 
@@ -15,7 +15,7 @@ public abstract class AE {
 }
 ```
 
-##### abe: trivial arithmetic/boolean expression language
+#### abe: trivial arithmetic/boolean expression language
 
 Supported expressions: Num, Add, Sub, True, False, If
 
@@ -31,7 +31,7 @@ public abstract class ABE {
 }
 ```
 
-##### abevisitor: abe modified to use the visitor pattern for interpreting and type checking
+#### abevisitor: abe modified to use the visitor pattern for interpreting and type checking
 
 Supported expressions: Num, Add, Sub, True, False, If
 
@@ -49,7 +49,7 @@ public abstract class ABE {
 }
 ```
 
-#### Disclaimer
+### Disclaimer
 
 These expression languages were written for educational purposes as part of an undergraduate course on compiler construction, and are not intended for general use.
 
